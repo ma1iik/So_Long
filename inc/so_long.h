@@ -3,23 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misrailo <misrailo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ma1iik <ma1iik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 19:06:57 by misrailo          #+#    #+#             */
-/*   Updated: 2022/05/16 18:49:51 by misrailo         ###   ########.fr       */
+/*   Updated: 2024/10/31 03:06:53 by ma1iik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# define ESC 53
-# define W_KEY 13
-# define A_KEY 0
-# define S_KEY 1
-# define D_KEY 2
+# ifdef __APPLE__  // macOS keycodes
+#  define ESC 53
+#  define W_KEY 13
+#  define A_KEY 0
+#  define S_KEY 1
+#  define D_KEY 2
+# else  // Linux keycodes
+#  define ESC 65307
+#  define W_KEY 119
+#  define A_KEY 97
+#  define S_KEY 115
+#  define D_KEY 100
+# endif
 
 # include <unistd.h>
+# include <math.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <mlx.h>
